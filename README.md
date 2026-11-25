@@ -9,7 +9,8 @@ Build the source with `pnpm install`, then choose this directory under **Plugins
 The bundle requires DeepSeek Harness 0.2.2-rc.5 or later with the native account launcher.
 
 The Settings shortcut still works.
-To use the native account menu while signed in, including its **Sign out** action, disable this plugin in **Plugins**.
-The card returns immediately.
+While signed in, open this plugin's settings in **Plugins** for **Feedback** and **Sign out**.
+Sign-out asks for confirmation and warns about running account tasks.
+Disabling the plugin restores the native account card.
 
 [Project documentation](docs/README.md)
