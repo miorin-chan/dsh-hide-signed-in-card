@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Hide signed-in card",
+    "description": "Hides the sidebar account card after sign-in and leaves it visible when signed out.",
+    "detail": "docs/DETAIL.md"
+  }
+}

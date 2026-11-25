@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Ocultar la tarjeta de cuenta al iniciar sesión",
+    "description": "Oculta la tarjeta de cuenta de la barra lateral al iniciar sesión y la muestra cuando no hay una sesión iniciada."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Masquer la carte de compte après connexion",
+    "description": "Masque la carte de compte dans la barre latérale après la connexion et la laisse visible hors connexion."
+  }
+}

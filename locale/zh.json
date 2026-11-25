@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "登录后隐藏账号卡片",
+    "description": "登录后隐藏侧栏账号卡片，未登录时保留。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}
