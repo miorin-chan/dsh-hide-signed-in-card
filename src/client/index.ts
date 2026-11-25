@@ -4,7 +4,6 @@ import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
 import type {} from '@deepseek-ai/dsh-client-ui-slots'
 import { createElement } from 'react'
 import { registerAccountActions } from './account-actions'
-import { styles } from './account-action-styles'
 
 const SLOT = 'shell.overlay'
 const ID = 'dsh-hide-signed-in-card'
@@ -21,7 +20,7 @@ const css = `
 `
 
 function AccountCardStyle() {
-  return createElement('style', { 'data-dsh-hide-signed-in-card': '' }, css + styles)
+  return createElement('style', { 'data-dsh-hide-signed-in-card': '' }, css)
 }
 
 export const inject = ['slots', 'locale', 'remote', 'remote.account', 'accountUi']
