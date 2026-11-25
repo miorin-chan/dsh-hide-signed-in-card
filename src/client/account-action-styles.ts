@@ -2,7 +2,7 @@ export const styles = `
 .dsh-hsic-panel {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   min-width: 0;
   container-type: inline-size;
   color: var(--dsw-alias-label-primary);
@@ -22,43 +22,43 @@ export const styles = `
   font-weight: 500;
   color: var(--dsw-alias-label-primary);
 }
-.dsh-hsic-card {
+.dsh-hsic-list {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  border: 0.5px solid var(--dsw-alias-border-l2);
-  border-radius: var(--dsw-radius-lg, 16px);
-  background: var(--dsw-alias-card-fill);
-  overflow: hidden;
 }
 .dsh-hsic-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px 12px;
   min-width: 0;
-  padding: 14px 16px;
+  padding: 12px 0;
+}
+.dsh-hsic-row:first-child {
+  padding-top: 4px;
+}
+.dsh-hsic-row:last-child {
+  padding-bottom: 4px;
 }
 .dsh-hsic-row + .dsh-hsic-row {
-  border-top: 0.5px solid var(--dsw-alias-border-l2);
+  border-top: 0.5px solid var(--dsw-alias-border-l1);
 }
 .dsh-hsic-icon {
   display: inline-flex;
   flex: none;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  box-sizing: border-box;
-  border: 0.5px solid var(--dsw-alias-border-l2);
-  border-radius: var(--dsw-radius-sm, 8px);
-  background: var(--dsw-alias-bg-layer-2);
+  width: 20px;
+  height: 20px;
+  align-self: flex-start;
+  margin-top: 2px;
   color: var(--dsw-alias-label-secondary);
 }
 .dsh-hsic-copy {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   min-width: 0;
 }
 .dsh-hsic-title-line {
@@ -88,6 +88,7 @@ export const styles = `
   display: inline-flex;
   flex: none;
   align-items: center;
+  margin-inline-start: 4px;
 }
 .dsh-hsic-link-button {
   box-sizing: border-box;
@@ -142,12 +143,13 @@ export const styles = `
     align-items: flex-start;
   }
   .dsh-hsic-copy {
-    flex: 1 1 calc(100% - 44px);
+    flex: 1 1 calc(100% - 32px);
   }
   .dsh-hsic-control {
     width: 100%;
     box-sizing: border-box;
-    padding-inline-start: 44px;
+    margin-inline-start: 0;
+    padding-inline-start: 32px;
   }
 }
 `

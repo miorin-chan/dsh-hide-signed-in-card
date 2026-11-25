@@ -117,7 +117,7 @@ export function registerAccountActions(ctx: Context): () => void {
         <div className={`${prefix}-head`}>
           <h4 className={`${prefix}-heading`}>{tPlugin('sectionTitle')}</h4>
         </div>
-        <div className={`${prefix}-card`}>
+        <div className={`${prefix}-list`}>
           <div className={`${prefix}-row`}>
             <span className={`${prefix}-icon`} aria-hidden="true">
               <IconUserOutlineMedium size={16} />
