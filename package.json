@@ -1,7 +1,6 @@
 {
   "name": "@miorin/dsh-hide-signed-in-card",
   "version": "0.1.0",
-  "private": true,
   "license": "MIT",
   "description": "Hides the sidebar account card after sign-in and restores it when signed out.",
   "type": "module",
@@ -75,5 +74,17 @@
     "react": "18.3.1",
     "react-test-renderer": "18.3.1",
     "typescript": "5.7.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miorin-chan/dsh-hide-signed-in-card.git"
+  },
+  "homepage": "https://github.com/miorin-chan/dsh-hide-signed-in-card#readme",
+  "bugs": {
+    "url": "https://github.com/miorin-chan/dsh-hide-signed-in-card/issues"
   }
 }
