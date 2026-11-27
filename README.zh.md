@@ -12,3 +12,12 @@
 停用本插件后，原生账号卡片会恢复。
 
 [项目文档](docs/README.md)
+
+## 实拍截图
+
+插件设置页显示退出登录和意见反馈入口。
+实拍用本地测试夹具模拟已登录状态，没有使用真实账号。
+
+![插件设置中的退出登录与意见反馈入口](docs/assets/screenshots/main-light.png)
+
+[深色主题](docs/assets/screenshots/main-dark.png)

@@ -14,3 +14,12 @@ Sign-out asks for confirmation and warns about running account tasks.
 Disabling the plugin restores the native account card.
 
 [Project documentation](docs/README.md)
+
+## Screenshots
+
+The Chinese-language plugin settings show sign-out and feedback controls.
+The signed-in state was simulated without a real account.
+
+![Sign-out and feedback controls in the plugin settings](docs/assets/screenshots/main-light.png)
+
+[Dark theme](docs/assets/screenshots/main-dark.png)
