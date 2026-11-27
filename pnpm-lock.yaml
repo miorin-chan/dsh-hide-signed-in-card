@@ -41,6 +41,9 @@ importers:
       '@deepseek-ai/dsh-deepseek-account':
         specifier: 0.2.2-rc.5
         version: 0.2.2-rc.5(@deepseek-ai/cordis@4.1.0)(@deepseek-ai/dsh-authorization@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0)(@deepseek-ai/dsh-credentials@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0))(@deepseek-ai/dsh-llm@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0)(@deepseek-ai/dsh-error@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0))))(@deepseek-ai/dsh-brand@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0))(@deepseek-ai/dsh-credentials@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0))(@deepseek-ai/dsh-host-webserver@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0))(@deepseek-ai/dsh-llm@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0)(@deepseek-ai/dsh-error@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0)))(@deepseek-ai/dsh-typert-protocol@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0))(@deepseek-ai/dsh-util-values@0.2.2-rc.5(@deepseek-ai/cordis@4.1.0))
+      '@miorin/dsh-plugin-knobs-ui':
+        specifier: 0.1.0
+        version: 0.1.0(react@18.3.1)
       '@types/node':
         specifier: 22.20.5
         version: 22.20.5
@@ -360,6 +363,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@miorin/dsh-plugin-knobs-ui@0.1.0':
+    resolution: {integrity: sha512-vIPLNMo0011a8c0ULRcK2x5s+mU8oVyKmIekKh1qu7r+757jZOKQkjDesJRwZWI+4I9W96IhYfxy86XnOz4prw==}
+    engines: {node: ^22.18.0 || >=24.11.0}
+    peerDependencies:
+      react: ^18.3.0
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -699,6 +708,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.28.2':
     optional: true
+
+  '@miorin/dsh-plugin-knobs-ui@0.1.0(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
 
   '@standard-schema/spec@1.1.0': {}
 

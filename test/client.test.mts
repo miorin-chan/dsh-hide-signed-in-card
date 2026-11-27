@@ -178,7 +178,7 @@ test('settings page renders component-scoped card, native primitives, safe feedb
 
     const denied = render(Component, 'page', endpoint => endpoint !== 'account/signOut')
     assert.equal(denied.root.findAllByType('button').length, 0)
-    assert.equal(denied.root.findAllByProps({ className: 'dsh-hsic-desc' })[0].props.children, '已登录时自动隐藏侧栏账号卡片。')
+    assert.equal(denied.root.findAllByProps({ className: 'knobs-desc' })[0].props.children, '已登录时自动隐藏侧栏账号卡片。')
 
     const page = render(Component)
     const styleEl = page.root.findByType('style')
@@ -201,7 +201,7 @@ test('settings page renders component-scoped card, native primitives, safe feedb
     const button = page.root.findByType('button')
     assert.equal(button.props['data-variant'], 'outline')
     assert.equal(button.props['data-size'], 'sm')
-    assert.equal(button.props.className, 'dsh-hsic-danger')
+    assert.equal(button.props.className, 'knobs-danger')
     assert.equal(button.props.children.at(-1), 'signOut')
 
     // Non-HTTPS override falls back to the default Feishu questionnaire.

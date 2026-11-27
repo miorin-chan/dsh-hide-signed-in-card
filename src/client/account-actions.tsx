@@ -14,6 +14,7 @@ import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
 import type {} from '@deepseek-ai/dsh-client-ui-settings-account/client'
 import type { PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import type {} from '@deepseek-ai/dsh-deepseek-account/remote'
+import { KNOBS_DANGER_CLASS, KNOBS_LINK_BUTTON_CLASS, KnobRow, KnobsPanel } from '@miorin/dsh-plugin-knobs-ui'
 import { useState } from 'react'
 import { styles } from './account-action-styles'
 import { LABELS, NS } from './labels'
@@ -112,66 +113,13 @@ export function registerAccountActions(ctx: Context): () => void {
     const isWarning = impact !== undefined && impact !== 'signOutDescription'
 
     return (
-      <div className={`${prefix}-panel`} data-dsh-hide-signed-in-card-settings="">
-        <style>{styles}</style>
-        <div className={`${prefix}-head`}>
-          <h4 className={`${prefix}-heading`}>{tPlugin('sectionTitle')}</h4>
-        </div>
-        <div className={`${prefix}-list`}>
-          <div className={`${prefix}-row`}>
-            <span className={`${prefix}-icon`} aria-hidden="true">
-              <IconUserOutlineMedium size={16} />
-            </span>
-            <div className={`${prefix}-copy`}>
-              <div className={`${prefix}-title-line`}>
-                <span className={`${prefix}-title`}>{t('signedIn')}</span>
-                <StateDot state="done" className={`${prefix}-status-dot`} />
-              </div>
-              <p className={`${prefix}-desc`}>
-                {tPlugin(canSignOut ? 'signedInHint' : 'signedInReadOnlyHint')}
-              </p>
-            </div>
-            {canSignOut && (
-              <div className={`${prefix}-control`}>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className={`${prefix}-danger`}
-                  icon={checking ? <StateDot state="ongoing" size={14} /> : <LogoutIcon />}
-                  disabled={checking}
-                  aria-busy={checking || undefined}
-                  onClick={() => { void requestSignOut() }}
-                >
-                  {t('signOut')}
-                </Button>
-              </div>
-            )}
-          </div>
-          <div className={`${prefix}-row`}>
-            <span className={`${prefix}-icon`} aria-hidden="true">
-              <IconPaperPlaneOutlineMedium size={16} />
-            </span>
-            <div className={`${prefix}-copy`}>
-              <div className={`${prefix}-title-line`}>
-                <span className={`${prefix}-title`}>{t('contactUs')}</span>
-              </div>
-              <p className={`${prefix}-desc`}>{tPlugin('feedbackHint')}</p>
-            </div>
-            <div className={`${prefix}-control`}>
-              <a
-                className={`${prefix}-link-button`}
-                href={feedbackUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${t('contactUs')} — ${tPlugin('openFeedback')}`}
-              >
-                <span>{tPlugin('openFeedback')}</span>
-                <IconRightUpOutlineRegular size={12} aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-        </div>
-        {canSignOut && impact !== undefined && (
+      <KnobsPanel
+        scope={key}
+        heading={tPlugin('sectionTitle')}
+        className={`${prefix}-panel`}
+        data-dsh-hide-signed-in-card-settings=""
+        styles={styles}
+        after={canSignOut && impact !== undefined ? (
           <Modal
             open
             title={t('signOut')}
@@ -197,8 +145,45 @@ export function registerAccountActions(ctx: Context): () => void {
           >
             {failed ? <p className={`${prefix}-error`} role="alert">{t('failed')}</p> : undefined}
           </Modal>
-        )}
-      </div>
+        ) : undefined}
+      >
+        <KnobRow
+          icon={<IconUserOutlineMedium size={16} />}
+          title={t('signedIn')}
+          indicator={<StateDot state="done" />}
+          description={tPlugin(canSignOut ? 'signedInHint' : 'signedInReadOnlyHint')}
+          control={canSignOut ? (
+            <Button
+              variant="outline"
+              size="sm"
+              className={KNOBS_DANGER_CLASS}
+              icon={checking ? <StateDot state="ongoing" size={14} /> : <LogoutIcon />}
+              disabled={checking}
+              aria-busy={checking || undefined}
+              onClick={() => { void requestSignOut() }}
+            >
+              {t('signOut')}
+            </Button>
+          ) : undefined}
+        />
+        <KnobRow
+          icon={<IconPaperPlaneOutlineMedium size={16} />}
+          title={t('contactUs')}
+          description={tPlugin('feedbackHint')}
+          control={(
+            <a
+              className={KNOBS_LINK_BUTTON_CLASS}
+              href={feedbackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t('contactUs')} — ${tPlugin('openFeedback')}`}
+            >
+              <span>{tPlugin('openFeedback')}</span>
+              <IconRightUpOutlineRegular size={12} aria-hidden="true" />
+            </a>
+          )}
+        />
+      </KnobsPanel>
     )
   }
 
